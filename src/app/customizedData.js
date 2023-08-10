@@ -12,6 +12,6 @@ export const setupCustomized = (dataC) => {
         
         postListC.innerHTML = li;
     } else {
-        postListC.innerHTML = '<h1>Log in to see you data</h1>';
+        postListC.innerHTML = '<h1>Log in to see your data</h1>';
     }
 };
