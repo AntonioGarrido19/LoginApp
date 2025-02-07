@@ -17,6 +17,6 @@ export const setupPosts = (data) => {
     postList.innerHTML = html;
     console.log(postList);
   } else {
-    postList.innerHTML = "<h1> You dont have rated any movies yet </h1>";
+    postList.innerHTML = "<h1> There is no movies posted </h1>";
   }
 };
