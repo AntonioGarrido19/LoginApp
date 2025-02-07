@@ -1,17 +1,23 @@
 const postListC = document.querySelector('.custom')
 
-
 export const setupCustomized = (dataC) => {
-    if (dataC && dataC.name && dataC.data) { 
-        const li = `
-            <li class="list-group-item list-group-item-action list-group-item-dark">
-                <h5>${dataC.name}</h5>
-                <p>${dataC.data}</p>
-            </li>
-        `;
-        
-        postListC.innerHTML = li;
+    if (dataC.length) {
+     let html = ""
+
+        dataC.forEach(doc => {
+        const post = doc.data()
+        console.log(post);
+        const li = 
+        `<li class="list-group-item list-group-item-action list-group-item-dark" >
+        <h5>${post.name}</h5>
+        <p>${post.data}</p>
+        </li>`
+
+        html += li
+        })
+        postListC.innerHTML = html
+        console.log(postListC);
     } else {
-        postListC.innerHTML = '<h1>Log in to see your data</h1>';
+        postListC.innerHTML = '<h1> Log in to see posts </h1>'
     }
-};
+}

@@ -13,13 +13,15 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./main.js" type="module"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" type="module"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark customized-navbar">
       <div class="container">
-        <a class="navbar-brand" href="#">LogInApp</a>
+        <a class="navbar-brand" href="#"
+          ><img src="assets/logoNavBar.png" alt=""
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -39,7 +41,7 @@
                 href="#"
                 data-bs-toggle="modal"
                 data-bs-target="#signinModal"
-                >Signin</a
+                >Log in</a
               >
             </li>
             <li class="nav-item logged-out">
@@ -48,36 +50,59 @@
                 href="#"
                 data-bs-toggle="modal"
                 data-bs-target="#signupModal"
-                >Signup</a
+                >Sign up</a
               >
             </li>
             <li class="nav-item logged-in">
-              <a class="nav-link" href="#" id="logout">Logout</a>
+              <a class="nav-link" href="#" id="logout">Log out</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <ul class="list-group posts">
-
-          </ul>
-        </div>
-      </div>
+    <!-- LOGGED OUT HTML -->
+    <div
+      class="logged-out-container d-flex flex-column align-items-center logged-out"
+    >
+      <img src="/assets/logoBody.png" alt="logo" class="m-5 logged-out" />
+      <h2 class="m-3 logged-out">Watch all your favorite films</h2>
+      <h3 class="m-1 text-secondary logged-out">
+        Log In or Sign Up to get started
+      </h3>
     </div>
 
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <ul class="list-group custom">
-            
-          </ul>
+    <!-- LOGGED IN HTML -->
+
+    <section class="logged-in-container d-flex bs-gutter-x:1.5rem logged-in">
+      <div
+        class="side-bar d-flex flex-column justify-content-around align-items-start logged-in"
+      >
+        <div class="home logged-in"><img src="/assets/home.png" alt="" /></div>
+        <div class="calendar logged-in"><img src="/" alt="" /></div>
+        <div class="settings logged-in">
+          <img src="/assets/settings.png" alt="" />
         </div>
       </div>
-    </div>
+
+      <div class="films-carousels-container w-100 logged-in">
+        <div class="container p-4">
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <ul class="list-group posts"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container p-4">
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <ul class="list-group custom"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Sign in Modal -->
     <div

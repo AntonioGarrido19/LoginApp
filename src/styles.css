@@ -1,4 +1,42 @@
 body {
     background-color: #202020;
     color: white;
+    height: 100vh;
 }
+
+body li {
+    font-size: 24px!important;
+    padding-left: 15px;
+}
+
+.container img {
+    height: 90px;
+}
+/* .customized-navbar {
+    height: 15%;
+} */
+
+.logged-in-container {
+ width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.side-bar {
+    width: 10%;
+}
+
+.side-bar img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.home {
+    width: 50%;
+    object-fit: cover;
+}
+
+.settings {
+        width: 60%;
+        object-fit: cover;
+    }

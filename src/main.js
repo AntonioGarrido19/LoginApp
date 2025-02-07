@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-import { getDocs, collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"
+import { getDocs, collection, doc, setDoc, query, where } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"
 import { auth, db } from "./app/firebase.js";
 import { loginCheck } from "./app/loginCheck.js";
 import {setupPosts} from './app/postList.js'
@@ -19,12 +19,12 @@ onAuthStateChanged(auth, async (user) => {
 
    const userID = user.uid;
    console.log(userID);
-    // 👇 Now that the user us know, we can load their data
-    const userDocRef = doc(db, "UserData", userID)
 
-    const userDocSnapshot = await getDoc(userDocRef);
-    console.log(userDocSnapshot.data());
-    setupCustomized(userDocSnapshot.data())
+    const  usersData = collection(db, "customizedData");
+    const q = query(usersData, where("id", "==", userID))
+    const querySnapshot = await getDocs(q)
+    console.log(querySnapshot);
+    setupCustomized(querySnapshot.docs)
 
   } else {
     setupPosts([])
