@@ -1,4 +1,8 @@
+import { auth } from "./firebase.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+
 const postListC = document.querySelector(".custom");
+const profileData = document.querySelector("#profile");
 
 export const setupCustomized = (dataC) => {
   if (dataC.length) {
@@ -20,3 +24,14 @@ export const setupCustomized = (dataC) => {
     postListC.innerHTML = "<h1> You dont have rated any movies yet </h1>";
   }
 };
+
+// Detectar usuario logeado
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("Usuario logeado:", user.email);
+    const username = user.email.split("@")[0]; // Obtiene solo lo que está antes del @
+    profileData.innerHTML = `Bienvenido, ${username}`;
+  } else {
+    console.log("No hay usuario logeado");
+  }
+});

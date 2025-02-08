@@ -33,14 +33,14 @@ export const setupPosts = (data) => {
           const movieElement = document.createElement("div");
           movieElement.classList.add("movie");
           movieElement.innerHTML = `
-          <div>
-            <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
-            </div>
-            <div>
-            <h3>${movie.title}</h3>
-            <p>${movie.overview}</p>
-            <input type="button" value="Agregar a mi Lista">
-            </div>
+         
+
+            <div class="card" style="width: 14rem;">
+  <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top img-fluid h-50" alt="${movie.title}">
+  <div class="card-body text-center">
+    <h5 class="card-title">${movie.title}</h5>
+  </div>
+</div>
           
         `;
           postList.appendChild(movieElement);
