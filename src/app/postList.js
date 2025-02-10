@@ -14,7 +14,7 @@ export const setupPosts = (data) => {
           movieElement.innerHTML = `
          
 
-            <div class="card" style="width: 14rem;">
+            <div class="card col-12">
                 <a href="singleMovie.html?id=${movie.id}">
                 <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" class="card-img-top img-fluid h-50" alt="${movie.title}">
               </a>
