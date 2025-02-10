@@ -1,7 +1,7 @@
 const postList = document.querySelector(".posts");
 
 export const setupPosts = (data) => {
-  if (data.length) {
+  if (data != null) {
     fetch(
       "https://api.themoviedb.org/3/discover/movie?api_key=d6695246ed8b602e5bf1d2d12995fd00",
       data
