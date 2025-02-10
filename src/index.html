@@ -34,7 +34,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
-          <ul class="navbar-nav w-100">
+          <ul class="navbar-nav w-100 d-flex justify-content-between">
+            <li class="nav-item logged-in d-flex w-100 justify-content-between">
+              <a class="nav-link logged-in" href="#" id="profile"></a>
+              <a class="nav-link logged-in" href="#" id="logout">Log out</a>
+            </li>
             <li class="nav-item logged-out">
               <a
                 class="nav-link"
@@ -52,10 +56,6 @@
                 data-bs-target="#signupModal"
                 >Sign up</a
               >
-            </li>
-            <li class="nav-item logged-in d-flex w-100 justify-content-between">
-              <a class="nav-link" href="#" id="profile"></a>
-              <a class="nav-link" href="#" id="logout">Log out</a>
             </li>
           </ul>
         </div>
