@@ -35,11 +35,13 @@
         </button>
         <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
           <ul class="navbar-nav w-100 d-flex justify-content-between">
-            <li class="nav-item logged-in d-flex w-100 justify-content-between">
+            <li
+              class="nav-item logged-in d-flex w-100 justify-content-between d-sm-flex flex-column"
+            >
               <a class="nav-link logged-in" href="#" id="profile"></a>
-              <a class="nav-link logged-in" href="#" id="logout">LogOut</a>
+              <a class="nav-link logged-in" href="#" id="logout">Log out</a>
             </li>
-            <li class="nav-item logged-out">
+            <li class="nav-item logged-out col-12 col-md-auto">
               <a
                 class="nav-link"
                 href="#"
@@ -48,7 +50,7 @@
                 >Log in</a
               >
             </li>
-            <li class="nav-item logged-out">
+            <li class="nav-item logged-out col-12 col-md-auto">
               <a
                 class="nav-link"
                 href="#"
@@ -64,11 +66,11 @@
 
     <!-- LOGGED OUT HTML -->
     <div
-      class="logged-out-container d-flex flex-column align-items-center logged-out"
+      class="logged-out-container d-flex flex-column align-items-center text-center logged-out"
     >
       <img src="assets/logoBody.png" alt="logo" class="m-5 logged-out" />
       <h2 class="m-3 logged-out">Rate and review your favourite films</h2>
-      <h3 class="m-1 text-secondary logged-out">
+      <h3 class="m-3 text-secondary logged-out">
         Log In or Sign Up to get started
       </h3>
     </div>
