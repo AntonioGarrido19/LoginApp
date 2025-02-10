@@ -4,43 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Details</title>
-    <link rel="stylesheet" href="styles.css" />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" type="module"></script>
   </head>
-  <body class="bg-dark">
-    <div id="movie-details"></div>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark customized-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="assets/logoNavBar.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+          <ul class="navbar-nav w-100 d-flex justify-content-between">
+            <li class="nav-item logged-in d-flex w-100 justify-content-between">
+              <a class="nav-link logged-in" href="#" id="profile"></a>
+              <a class="nav-link logged-in" href="#" id="logout">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <script>
-      // Obtener el ID de la película desde la URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const movieId = urlParams.get("id");
+    <div
+      id="movie-details"
+      class="min-vh-100 d-flex justify-content-center align-items-center"
+    ></div>
 
-      // Obtener los detalles de la película desde la API
-      fetch(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=d6695246ed8b602e5bf1d2d12995fd00`
-      )
-        .then((response) => response.json())
-        .then((movie) => {
-          document.getElementById("movie-details").innerHTML = `
-          <div class="d-flex flex-row w-50"> 
-             <div>
-                <img class="w-50" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-             </div>
-             <div class="text-white p-3 rounded" >
-                    <h3>${movie.title}</h3>
-                    <p>${movie.overview}</p>
-                    <p><strong>Release Date:</strong> ${movie.release_date}</p>
-                    <p><strong>Rating:</strong> ${movie.vote_average}/10</p>
-                    <a href="index.html">Back to Home</a>
-                </div>
-            </div>
-                    `;
-        })
-        .catch((error) => console.error("Error loading movie details:", error));
-    </script>
+    <script src="app/singleMovie.js"></script>
+    <script type="module" src="app/logout.js"></script>
   </body>
 </html>
