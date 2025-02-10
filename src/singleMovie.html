@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="bg-dark">
+    <div id="movie-details"></div>
+
+    <script>
+      // Obtener el ID de la película desde la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const movieId = urlParams.get("id");
+
+      // Obtener los detalles de la película desde la API
+      fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=d6695246ed8b602e5bf1d2d12995fd00`
+      )
+        .then((response) => response.json())
+        .then((movie) => {
+          document.getElementById("movie-details").innerHTML = `
+          <div class="d-flex flex-row w-50"> 
+             <div>
+                <img class="w-50" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+             </div>
+             <div class="text-white p-3 rounded" >
+                    <h3>${movie.title}</h3>
+                    <p>${movie.overview}</p>
+                    <p><strong>Release Date:</strong> ${movie.release_date}</p>
+                    <p><strong>Rating:</strong> ${movie.vote_average}/10</p>
+                    <a href="index.html">Back to Home</a>
+                </div>
+            </div>
+                    `;
+        })
+        .catch((error) => console.error("Error loading movie details:", error));
+    </script>
+  </body>
+</html>
